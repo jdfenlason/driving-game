@@ -9,4 +9,17 @@ body {
 
 #car {
   width: 15rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.down {
+  transform: rotate(90deg);
+}
+
+.up {
+  transform: rotate(-90deg);
+}
+
+.left {
+  transform: rotate(-180deg);
 }
