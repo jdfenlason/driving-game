@@ -13,7 +13,6 @@ function drive() {
   var moving = carNav.x + 'px';
   $car.style.left = moving;
 }
-
 function keyEvent(event) {
   if (event.keyCode === 37) {
     $car.className = 'left';
