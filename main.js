@@ -9,10 +9,29 @@ var intervalId = null;
 window.addEventListener('keydown', keyEvent);
 
 function drive() {
-  carNav.x += 8;
-  var moving = carNav.x + 'px';
-  $car.style.left = moving;
+  var moving = null;
+  if (carNav.direction === 'east') {
+    carNav.x += 10;
+    moving = carNav.x + 'px';
+    $car.style.left = moving;
+  }
+  if (carNav.direction === 'west') {
+    carNav.x -= 10;
+    moving = carNav.x + 'px';
+    $car.style.left = moving;
+  }
+  if (carNav.direction === 'north') {
+    carNav.y -= 10;
+    moving = carNav.y + 'px';
+    $car.style.top = moving;
+  }
+  if (carNav.direction === 'south') {
+    carNav.y += 10;
+    moving = carNav.y + 'px';
+    $car.style.top = moving;
+  }
 }
+
 function keyEvent(event) {
   if (event.keyCode === 37) {
     $car.className = 'left';
