@@ -9,7 +9,7 @@ body {
 
 #car {
   width: 10rem;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.03s ease-in-out;
   position: absolute;
 }
 
