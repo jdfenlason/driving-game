@@ -1,17 +1,18 @@
 var carNav = {
   direction: 'east',
-  locationXaxis: 0,
-  locationYaxis: 0
-
+  x: 0,
+  y: 0,
+  isStarted: false
 };
 var $car = document.querySelector('#car');
+var intervalId = null;
 window.addEventListener('keydown', keyEvent);
 
 function drive() {
-  carNav.locationXaxis += 1;
-  $car.style.left = carNav.locationXaxis + 'rem';
+  carNav.x += 8;
+  var moving = carNav.x + 'px';
+  $car.style.left = moving;
 }
-drive();
 
 function keyEvent(event) {
   if (event.keyCode === 37) {
@@ -26,5 +27,13 @@ function keyEvent(event) {
   } else if (event.keyCode === 40) {
     $car.className = 'down';
     carNav.direction = 'south';
+  } else if (event.keyCode === 32) {
+    if (carNav.isStarted === false) {
+      intervalId = setInterval(drive, 16);
+      carNav.isStarted = true;
+    } else {
+      clearInterval(intervalId);
+      carNav.isStarted = false;
+    }
   }
 }
