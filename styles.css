@@ -8,8 +8,8 @@ body {
 }
 
 #car {
-  width: 15rem;
-  transition: transform 0.5s ease-in-out;
+  width: 10rem;
+  transition: transform 0.03s ease-in-out;
   position: absolute;
 }
 
